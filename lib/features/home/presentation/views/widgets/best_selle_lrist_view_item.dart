@@ -1,0 +1,50 @@
+import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:flutter/material.dart';
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const SizedBox(
+            height: 125,
+            child: CustomListViewItem(
+              height: 2.7,
+              circleSize: 8,
+            )),
+        const SizedBox(width: 20),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text("Harry Potter and the Goblet of Fire",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine)),
+              ),
+              const SizedBox(height: 3),
+              const Text("J.K. Rowling", style: Styles.textStyle14),
+              Row(
+                children: [
+                  Text("19.99 \$",
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold)),
+                  const Spacer(),
+                  const BookRating(),
+                ],
+              )
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
