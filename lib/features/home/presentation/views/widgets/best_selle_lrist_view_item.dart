@@ -2,7 +2,7 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,7 +19,7 @@ class BestSellerListViewItem extends StatelessWidget {
         children: [
           const SizedBox(
               height: 125,
-              child: CustomListViewItem(
+              child: CustomBookItem(
                 height: 2.7,
                 circleSize: 8,
               )),
