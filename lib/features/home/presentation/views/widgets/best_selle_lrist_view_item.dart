@@ -20,6 +20,8 @@ class BestSellerListViewItem extends StatelessWidget {
           const SizedBox(
               height: 125,
               child: CustomBookItem(
+                imageUrl:
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR7IcZHkFtiEEEF20_gIMTSFWLqJyD70W4TQ2r1Gf71IKVn1bRb",
                 height: 2.7,
                 circleSize: 8,
               )),
