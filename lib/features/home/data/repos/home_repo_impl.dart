@@ -19,11 +19,11 @@ class HomeRepoImpl implements HomeRepo {
         // endPoint: 'volumes?q=promramming',
       );
 
-      List<BookModel> books = [];
+      List<BookModel> newsBooks = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        newsBooks.add(BookModel.fromJson(item));
       }
-      return Right(books);
+      return Right(newsBooks);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure(e.error.toString()));
@@ -35,10 +35,10 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await apiService.get(endPoint: 'volumes?q=promramming');
+      var jsonData = await apiService.get(endPoint: 'volumes?q=promramming');
 
       List<BookModel> books = [];
-      for (var item in data['items']) {
+      for (var item in jsonData['items']) {
         books.add(BookModel.fromJson(item));
       }
       return Right(books);

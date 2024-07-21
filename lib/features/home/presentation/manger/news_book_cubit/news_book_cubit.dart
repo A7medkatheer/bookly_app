@@ -9,7 +9,7 @@ class NewsBookCubit extends Cubit<NewsBookState> {
   NewsBookCubit(this.homeRepo) : super(NewsBookInitial());
   final HomeRepo homeRepo;
 
-  Future<void> fetchFeaturedBooks() async {
+  Future<void> fetchNewsBooks() async {
     emit(NewsBookLoading());
     try {
       final books = await homeRepo.fetchNewsBooks();
