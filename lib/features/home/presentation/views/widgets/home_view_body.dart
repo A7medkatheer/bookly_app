@@ -37,26 +37,7 @@ class HomeViewBody extends StatelessWidget {
             child: BestSellerListView(),
           ),
         ),
-        // SliverToBoxAdapter(
-        //   child: SizedBox(
-        //     height: 100,
-        //   ),
-        // )
       ],
     );
-    // return const Padding(
-    //   padding: EdgeInsets.symmetric(horizontal: 25),
-    //   child: Column(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     // mainAxisAlignment: MainAxisAlignment.s,
-    //     children: [
-    //       CustomAppBAr(),
-    //       FeaturedBooksListView(),
-    //       SizedBox(height: 40),
-    //       Text('Best Sellers', style: Styles.textStyle18),
-    //       BestSellerListView(),
-    //     ],
-    //   ),
-    // );
   }
 }
