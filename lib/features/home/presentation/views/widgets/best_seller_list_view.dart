@@ -37,13 +37,13 @@ class BestSellerListView extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
-            itemCount: 15,
+            itemCount: state.books.length,
             itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 child: BookListViewItem(
-                    // bookModel: state.books[index],
-                    ),
+                  bookModel: state.books[index],
+                ),
               );
             },
           );
