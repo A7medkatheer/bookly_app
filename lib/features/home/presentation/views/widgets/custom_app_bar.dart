@@ -19,7 +19,12 @@ class CustomAppBAr extends StatelessWidget {
           const Spacer(),
           IconButton(
             icon: const Icon(Icons.search, size: 24),
-            onPressed: () {
+            onPressed: () async {
+              // await showSearch(
+              //   context: context,
+              //   delegate: CustomSearchDelegate(),
+              // );
+
               GoRouter.of(context).push(
                 AppRouter.searchView,
               );
