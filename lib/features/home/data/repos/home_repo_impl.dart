@@ -23,13 +23,21 @@ class HomeRepoImpl implements HomeRepo {
       for (var item in data['items']) {
         newsBooks.add(BookModel.fromJson(item));
       }
-      return Right(newsBooks);
+      return right(newsBooks);
     } catch (e) {
+      print(e.toString());
+
       if (e is DioException) {
-        return left(ServerFailure(e.error.toString()));
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
-    return left(ServerFailure('Server Failure'));
   }
 
   @override
@@ -42,35 +50,48 @@ class HomeRepoImpl implements HomeRepo {
       for (var item in jsonData['items']) {
         books.add(BookModel.fromJson(item));
       }
-      return Right(books);
+      return right(books);
     } catch (e) {
+      print(e.toString());
+
       if (e is DioException) {
-        return left(ServerFailure(e.error.toString()));
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
-    return left(ServerFailure('Server Failure'));
   }
-  
+
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category}) async{
-try {
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
       var jsonData = await apiService.get(
-          endPoint: 'volumes?q=computer&filtering=free_ebooks&sorting=relevance');
+          endPoint:
+              'volumes?q=computer&filtering=free_ebooks&sorting=relevance');
 
       List<BookModel> books = [];
       for (var item in jsonData['items']) {
         books.add(BookModel.fromJson(item));
       }
-      return Right(books);
+      return right(books);
     } catch (e) {
+      print(e.toString());
       if (e is DioException) {
-        return left(ServerFailure(e.error.toString()));
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
-    return left(ServerFailure('Server Failure'));
   }
-
-
-    
-  
 }

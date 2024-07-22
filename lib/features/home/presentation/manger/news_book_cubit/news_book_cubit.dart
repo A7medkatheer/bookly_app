@@ -11,14 +11,10 @@ class NewsBookCubit extends Cubit<NewsBookState> {
 
   Future<void> fetchNewsBooks() async {
     emit(NewsBookLoading());
-    try {
-      final books = await homeRepo.fetchNewsBooks();
-      emit(books.fold(
-        (failure) => NewsBookFailure(errMessage: failure.toString()),
-        (bookList) => NewsBookSuccess(books: bookList),
-      ));
-    } catch (e) {
-      emit(NewsBookFailure(errMessage: e.toString()));
-    }
+    final books = await homeRepo.fetchNewsBooks();
+    books.fold(
+      (failure) => emit(NewsBookFailure(errMessage: failure.errMessage)),
+      (books) => emit(NewsBookSuccess(books: books)),
+    );
   }
 }

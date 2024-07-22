@@ -11,7 +11,11 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
+      case DioExceptionType.badCertificate:
+        return ServerFailure('Bad Certificate');
       case DioExceptionType.connectionTimeout:
+        return ServerFailure('Connection timeout with ApiServer');
+      case DioExceptionType.connectionError:
         return ServerFailure('Connection timeout with ApiServer');
 
       case DioExceptionType.sendTimeout:
