@@ -23,6 +23,7 @@ class CustomSearchTextField extends StatelessWidget {
           controller: searchController,
           onFieldSubmitted: (value) {
             coloredPrint(success('✅  searchController value: $value'));
+            
             context
                 .read<SearchBookCubit>()
                 .featuredSearchBooks(category: value);

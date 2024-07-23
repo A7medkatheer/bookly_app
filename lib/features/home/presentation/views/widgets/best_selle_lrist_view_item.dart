@@ -43,7 +43,7 @@ class BookListViewItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  bookModel.volumeInfo.authors!.join(", "),
+                  bookModel.volumeInfo.authors?[0]??"",
                   style: Styles.textStyle14,
                 ),
                 Row(
