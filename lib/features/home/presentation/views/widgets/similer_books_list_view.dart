@@ -2,7 +2,7 @@ import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_error_widget.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_loading_indicator.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/shimmer_similer_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +36,7 @@ class SimilerBooksListView extends StatelessWidget {
                     child: CustomBookItem(
                       imageUrl:
                           state.books[index].volumeInfo.imageLinks.thumbnail,
-                      height: 2.3,
+                      height: 2.8,
                       circleSize: 16,
                     ),
                   ),
@@ -49,7 +49,7 @@ class SimilerBooksListView extends StatelessWidget {
             errMessage: state.errMessage,
           );
         } else {
-          return const CustomLoadingIndicator();
+          return const ShimmerSimilarListView( height: .15,);
         }
       },
     );

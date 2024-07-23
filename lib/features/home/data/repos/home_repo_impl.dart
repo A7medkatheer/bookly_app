@@ -23,7 +23,6 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(newsBooks);
     } catch (e) {
-
       if (e is DioException) {
         return left(
           ServerFailure.fromDioError(e),
@@ -36,6 +35,7 @@ class HomeRepoImpl implements HomeRepo {
       );
     }
   }
+
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
@@ -48,7 +48,6 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-
       if (e is DioException) {
         return left(
           ServerFailure.fromDioError(e),
@@ -88,9 +87,4 @@ class HomeRepoImpl implements HomeRepo {
       );
     }
   }
-  
-  
-  
 }
-
-
