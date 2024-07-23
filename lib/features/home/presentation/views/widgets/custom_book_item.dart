@@ -21,8 +21,8 @@ class CustomBookItem extends StatelessWidget {
             errorWidget: (context, url, error) => const Icon(Icons.error),
             placeholder: (context, url) => Center(
               child: Shimmer.fromColors(
-                  baseColor: Colors.grey[300]!,
-                  highlightColor: Colors.red,
+                  baseColor: Colors.blueGrey,
+                  highlightColor: Colors.grey,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(circleSize ?? 16),
                     child: AspectRatio(

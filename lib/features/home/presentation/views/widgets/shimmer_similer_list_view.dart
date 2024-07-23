@@ -7,8 +7,8 @@ class ShimmerSimilarListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.green,
+      baseColor: Colors.blueGrey,
+      highlightColor: Colors.grey,
       child: SizedBox(
         height: MediaQuery.of(context).size.height * height,
         child: ListView.builder(
