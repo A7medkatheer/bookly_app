@@ -16,77 +16,73 @@ class CustomLoadingIndicator extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: 5, // Number of shimmer items to display
         itemBuilder: (context, index) {
-          return Padding(
+            return Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
               children: [
-                SizedBox(
-                  height: 125,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: AspectRatio(
-                        aspectRatio: (2.7) / 4,
-                        child: Container(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+              SizedBox(
+                height: 125,
+                child: Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: AspectRatio(
+                  aspectRatio: (2.7) / 4,
+                  child: Container(
+                    color: Colors.white,
+                  ),
                   ),
                 ),
-                const SizedBox(
-                  width: 15,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      child: Container(
-                        height: 20, // Height of the shimmer item
-                        width: 200, // Width of the shimmer item
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Container(
-                        height: 20, // Height of the shimmer item
-                        width: 200, // Width of the shimmer item
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Container(
-                      height: 15, // Height of the shimmer item
-                      width: 60, // Width of the shimmer item
+              ),
+              const SizedBox(
+                width: 15,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.02,
                       color: Colors.white,
                     ),
-                    const SizedBox(height: 10),
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      // crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          height: 15, // Height of the shimmer item
-                          width: 50, // Width of the shimmer item
-                          color: Colors.white,
-                        ),
-                        const SizedBox(width: 150),
-                        Container(
-                          height: 15, // Height of the shimmer item
-                          width: 50, // Width of the shimmer item
-                          color: Colors.white,
-                        ),
-                      ],
+                  ),
+                  const SizedBox(height: 15),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                      color: Colors.white,
                     ),
-                  ],
-                )
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.015,
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.015,
+                        width: MediaQuery.of(context).size.width * 0.08,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(width: 150),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.015,
+                        width: MediaQuery.of(context).size.width * 0.08,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                ],
+              )
               ],
             ),
-          );
+            );
         },
       ),
     );
